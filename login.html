@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #04AA6D, #2c3e50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Form Box */
+form {
+  background: white;
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: slideDown 0.6s ease;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Avatar */
+.imgcontainer {
+  text-align: center;
+  padding: 20px;
+}
+
+img.avatar {
+  width: 80px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+img.avatar:hover {
+  transform: scale(1.1);
+}
+
+/* Container */
+.container {
+  padding: 25px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* Labels */
+
+
+/* Inputs */
+input[type=text], 
+input[type=password], 
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 0 0 10px 0;   /* FIXED spacing */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+*{
+  box-sizing: border-box;
+}
+
+
+/* Focus Effect */
+input:focus, select:focus {
+  border-color: #04AA6D;
+  box-shadow: 0 0 5px #04AA6D;
+  outline: none;
+}
+
+/* Login Button */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #028a57;
+  transform: scale(1.03);
+}
+
+/* Remember Me */
+.remember {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Footer */
+.footer-box {
+  background: #f1f1f1;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Cancel Button */
+.cancelbtn {
+  background-color: #f44336;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.footer-box a {
+  color: #04AA6D;
+  text-decoration: none;
+}
+
+.footer-box a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<form action="login" method="post">
+
+  <div class="imgcontainer">
+    <img src="login.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+
+    <label for="uname">Username</label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+    <label for="psw">Password</label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="dept">Department</label>
+    <select name="department" id="dept" required>
+      <option value="">Select Department</option>
+      <option>Administration</option>
+      <option>Finance</option>
+      <option>Engineering</option>
+      <option>Education</option>
+      <option>Agriculture</option>
+      <option>Health</option>
+      <option>Social Welfare</option>
+      <option>Women & Child</option>
+    </select>
+
+    <button type="submit">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </button>
+
+    <div class="remember">
+      <input type="checkbox" checked="checked" name="remember">
+      <span style="margin-left:5px;">Remember me</span>
+    </div>
+
+  </div>
+
+  <div class="footer-box">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <p>Forgot <a href="#">password?</a></p>
+  </div>
+
+</form>
+
+</body>
+</html>
