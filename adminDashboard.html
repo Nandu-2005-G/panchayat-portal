@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<!-- Font Awesome (icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* Body */
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+/* Header */
+.header {
+    background: #04AA6D;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #333;
+    position: fixed;
+    top: 60px; /* FIXED overlap */
+    left: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: #04AA6D;
+    padding-left: 20spx;
+    border-left: 4px solid #fff;
+    padding-top: 10px;
+}
+
+/* Main Content */
+.main {
+    margin-left: 210px;
+    margin-top: 80px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 5px gray;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Card Hover */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Icons */
+.card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+/* Icon Animation */
+.card:hover i {
+    transform: rotate(10deg) scale(1.2);
+    color: #04AA6D;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h2>Admin Dashboard</h2>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="administration.html"><i class="fas fa-user-cog"></i> Administration</a>
+    <a href="finance.html"><i class="fas fa-coins"></i> Finance</a>
+    <a href="Engineering.html"><i class="fas fa-tools"></i> Engineering</a>
+    <a href="#"><i class="fas fa-graduation-cap"></i> Education</a>
+    <a href="#"><i class="fas fa-tractor"></i> Agriculture</a>
+    <a href="#"><i class="fas fa-hospital"></i> Health</a>
+    <a href="#"><i class="fas fa-users"></i> Social Welfare</a>
+    <a href="#"><i class="fas fa-female"></i> Women & Child</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+    <h3 style="width: 100%;">Welcome Admin</h3>
+
+    <div class="card">
+        <i class="fas fa-user-cog"></i>
+        <h4>Administration</h4>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-coins"></i>
+        <h4>Finance</h4>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-tools"></i>
+        <h4>Engineering</h4>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-graduation-cap"></i>
+        <h4>Education</h4>
+    </div>
+
+</div>
+
+</body>
+</html>

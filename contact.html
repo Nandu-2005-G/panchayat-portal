@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+/* FIX WIDTH */
+* {
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #04AA6D, #2c3e50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Form Box */
+.container {
+  background: white;
+  width: 400px;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: slideDown 0.6s ease;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Inputs */
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+/* Focus Effect */
+input:focus, select:focus, textarea:focus {
+  border-color: #04AA6D;
+  box-shadow: 0 0 5px #04AA6D;
+  outline: none;
+}
+
+/* Textarea */
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* Button */
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+input[type=submit]:hover {
+  background-color: #028a57;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h3>Contact Form</h3>
+
+  <form action="/action_page.php">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Enter your name" required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Enter your last name" required>
+
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+      <option value="">Select Country</option>
+      <option>Australia</option>
+      <option>Canada</option>
+      <option>USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write your message..." required></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mandal Grama Panchayat Portal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+  body {
+    margin: 0;
+    font-family: Arial;
+  }
+
+  /* HEADER */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3f3c8f;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-section img {
+    height: 80px;
+    margin-right: 10px;
+  }
+
+  .title h2 { margin: 0; font-size: 18px; }
+  .tagline { font-size: 12px; color: #ffd700; }
+
+  /* MENU */
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+
+  .menu a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* TOGGLE */
+  .menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* DROPDOWN */
+  .dropdown { position: relative; }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #3f3c8f;
+    min-width: 180px;
+    top: 40px;
+    left: 0;
+    flex-direction: column;
+  }
+
+  .dropdown-content a {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+
+    .menu-toggle { display: block; }
+
+    .menu {
+      position: absolute;
+      top: 70px;
+      right: -250px;
+      width: 250px;
+      background: #3f3c8f;
+      flex-direction: column;
+      transition: 0.4s;
+    }
+
+    .menu.active { right: 0; }
+
+    .dropdown-content { position: static; }
+
+    .dropdown:hover .dropdown-content { display: none; }
+
+    .dropdown.active .dropdown-content { display: flex; }
+  }
+
+  /* CONTENT */
+  .section-title {
+    margin-top: 30px;
+    color: #0a7ff5;
+    font-weight: bold;
+  }
+
+  .card {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  /* HOVER EFFECT (PROFESSIONAL) */
+  .hover-effect {
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease 0.3s, transform 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .hover-effect::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background: #ffcc00;
+    transition: width 0.3s ease;
+  }
+
+  .hover-effect:hover {
+    color: #ffcc00;
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px rgba(255,204,0,0.6);
+  }
+
+  .hover-effect:hover::after {
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Footer main */
+.footer {
+    background-color: #433b8c;
+    color: #fff;
+    padding: 40px 20px 20px;
+}
+
+/* Layout */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 50px;
+}
+
+/* Columns */
+.footer-col {
+    width: 23%;
+    min-width: 220px;
+}
+
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Text */
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* List */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffd700;
+    transform: translateX(5px); /* moves right */
+}
+.footer-col ul li a::before {
+    content: "» ";
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover::before {
+    opacity: 1;
+}
+
+.footer-col ul li a:hover {
+    color: #ffd700; /* gold color */
+}
+
+/* Icons */
+.footer-col i {
+    margin-right: 8px;
+    color: #61a10c;
+}
+
+/* Social icons */
+.social-icons i {
+    background: #fff;
+    color: #433b8c;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.social-icons i:hover {
+    color: white;
+}
+
+.fa-whatsapp:hover { background: #25D366; }
+.fa-youtube:hover { background: #FF0000; }
+.fa-x-twitter:hover { background: #000; }
+.fa-linkedin-in:hover { background: #0077b5; }
+
+/* Bottom section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    border-top: 1px solid #aaa;
+    padding-top: 15px;
+}
+  .login-btn a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: hsl(130, 98%, 49%);
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+
+  /* TRANSITION */
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.login-btn a:hover {
+  background: #f8a807;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.col-sm-4{
+    font-weight: bold;
+}
+.abouttext {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.abouttext img{
+  padding-left: 30px;
+}
+.abouttext p{
+  padding-left: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.famous-section {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 25px;
+}
+
+.famous-card {
+  background:rgb(240, 234, 234) ;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  transition: 0.3s;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.famous-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(248, 242, 242, 0.2);
+}
+
+.famous-card h4 {
+  color: #f5b60a;
+  margin-bottom: 10px;
+}
+.reference-section {
+  background: 0 4px 10px rgba(72, 14, 206, 0.2);
+  padding-left: 30px;
+  margin-left: 30px;
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+
+.reference-section ol {
+  padding-left: 125px;
+}
+
+.reference-section li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.reference-section a{
+  font-weight: bold;
+}
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+
+    /* 3D effect */
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.3),
+        0 8px 16px rgba(0,0,0,0.2);
+        
+    transform: perspective(500px) rotateY(10deg);
+    transition: 0.4s;
+}
+.logo-section:hover img {
+    transform: perspective(500px) rotateY(0deg) scale(1.1);
+}
+.title h2 {
+    font-size: 22px;
+    color: #333;
+
+    /* 3D text shadow */
+    text-shadow: 
+        1px 1px 0 #999,
+        2px 2px 0 #777,
+        3px 3px 5px rgba(0,0,0,0.3);
+}
+.abouttext {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    padding: 20px;
+    margin: 20px;
+
+    background: #ffffff;
+    border-radius: 15px;
+
+    /* 3D depth */
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.2);
+
+    transition: 0.4s;
+}
+
+/* Hover lift effect */
+.abouttext:hover {
+    transform: translateY(-8px) scale(1.01);
+}
+
+/* Image styling */
+.about-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+
+    /* 3D look */
+    box-shadow: 
+        0 5px 15px rgba(0,0,0,0.3);
+
+    transition: 0.4s;
+}
+
+/* Image hover zoom */
+.abouttext:hover .about-img {
+    transform: scale(1.05) rotateY(5deg);
+}
+
+/* Text styling */
+.abouttext p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+
+    /* soft 3D text feel */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.abouttext {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+@media (max-width: 768px) {
+    .abouttext {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 100%;
+        height: auto;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+<header class="main-header">
+
+  <div class="logo-section">
+    <img src="mandal1logo.png">
+    <div class="title">
+      <h2 class="hover-effect">Smart Village Governance</h2>
+      <p class="tagline">Digital Village Administration</p>
+    </div>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav class="menu" id="menu">
+    <a href="index.html" class="hover-effect">Home</a>
+
+    <div class="dropdown">
+      <a href="#" onclick="toggleDropdown(event)" class="hover-effect">Departments ▾</a>
+      <div class="dropdown-content">
+        <a href="administration.html">Administration</a>
+        <a href="finance.html">Finance</a>
+        <a href="Engineering.html">Engineering</a>
+        <a href="#">Education</a>
+        <a href="#">Agriculture</a>
+        <a href="#">Health</a>
+      </div>
+    </div>
+
+    <a href="gallery.html" class="hover-effect">Gallery</a>
+    <a href="compliant.html" class="hover-effect">Complaints</a>
+    <a href="contact.html" class="hover-effect">Contact</a>
+  </nav>
+  <div class="login-btn">
+  <a href="login.html">Login / Sign up</a>
+</div>
+
+</header>
+
+
+<div class="container">
+
+  <center>
+    <h1 style="color: green; font-weight: bold; font-size: 40px; font-family: Impact;padding-bottom: 50px;">
+      MANDAL GRAMA PANCHAYAT DIGITAL SERVICES PORTAL
+    </h1>
+  </center>
+
+  <h2 class="section-title" style="font-family: Georgia, 'Times New Roman', Times, serif;color: blue;margin-left: 30px; padding-bottom: 30px;">About Kuppam</h2>
+
+
+  <!-- FIXED STRUCTURE -->
+  <div class="abouttext">
+    <img src="KUPPAM.jpg">
+
+    <p>
+  
+   Kuppam is a town located in the Andhra Pradesh, India, in the Chittoor District under Kuppam Mandal. Geographically, it lies at coordinates 12.75°N latitude and 78.37°E longitude, with an average elevation of about 667 meters above sea level. The town is governed by a Municipal Council and administered by the Kuppam Area Development Authority. Kuppam covers an area of approximately 3.10 square kilometers and, according to the 2011 census, has a population of 21,963, resulting in a population density of around 7,080 people per square kilometer. Telugu is the official language, while Telugu, Tamil, and Kannada are commonly spoken regional languages. The town follows Indian Standard Time (UTC+5:30), with the postal PIN code 517425, telephone code +91–08570, and vehicle registration codes AP-39 and AP-03.
+  Kuppam is known for its granite quarries and factories. A granite variety, Kuppam Green,
+Kuppam has the presence of hydro Extrusion India Pvt Ltd. Hydro is a major aluminium extrusions company headquartered in Oslo, Norway.[8] This has now been acquired by Hindalco Industries Ltd.
+It is widely known for its granite industry, especially the export-quality “Kuppam Green” stone. The town enjoys good connectivity to Bangalore, about 115–125 km away, with trains being a preferred mode of transport.
+</p>
+</div>
+<h2 class="section-title" style="font-family: Georgia, 'Times New Roman', Times, serif;color: blue;margin-left: 30px;padding-bottom: 30px;">Famous in Kuppam</h2>
+
+<div class="famous-section">
+
+  <div class="famous-card">
+    <h4>Granite Industry</h4>
+    <p>Kuppam is widely known for its export-quality “Kuppam Green” granite, which is in high demand in international markets.</p>
+  </div>
+
+  <div class="famous-card">
+    <h4>Tri-State Location</h4>
+    <p>The town lies near the borders of Andhra Pradesh, Karnataka, and Tamil Nadu, making it an important regional junction.</p>
+  </div>
+
+  <div class="famous-card">
+    <h4>Industrial Presence</h4>
+    <p>Kuppam hosts major industries like aluminium extrusion units, contributing to local employment and development.</p>
+  </div>
+
+</div>
+
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+</div>
+
+ 
+<h2 class="section-title" style="font-family: Georgia, 'Times New Roman', Times, serif;color: blue;margin-left: 130px;padding-bottom:40px;">Reference</h2>
+
+<div class="reference-section" style="font: bold;">
+  <ol>
+    <li>
+      <a href="http://www.censusindia.gov.in/2011census/dchb/2823_PART_B_DCHB_CHKR.pdf">District Census Handbook - Chittoor, Census of India.</a></li>
+    <li>
+      <a href="https://censusindia.gov.in/nada/index.php/catalog/10193/download/13305/DDW-C16-STMT-MDDS-2800.XLSX">Population by Mother Tongue Andhra Pradesh, Census of India.</a></li>
+    <li>
+      <a href="https://en.climate-data.org/asia/india/andhra-pradesh/kuppam-1012459/">Kuppam Climate Data – Climate-Data.org.</a></li>
+    <li>
+      <a href="https://www.gad.ap.gov.in/notifications/notices/kada-revival-of-kuppam-area-development-authority-for-overall-economic-growth-in-kada-region-orders-issued">Kuppam Area Development Authority Notification – Government of Andhra Pradesh.</a></li>
+    
+  </ol>
+</div>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h3>Smart Village Governance</h3>
+
+            <p><i class="fa fa-map-marker-alt"></i>
+                The Kuppam Area Development Authority (KADA) office is headquartered in Kuppam,<br>
+Kuppam, Chittoor district, Andhra Pradesh, India.            </p>
+
+            <p><i class="fa fa-phone"></i> 08562-224168, 244302, 244301, 244438.</p>
+
+            <p><i class="fa fa-envelope"></i> kada@gmail.com</p>
+            <p><i class="fa fa-envelope"></i> kada.org.in</p>
+            <p><i class="fa fa-envelope"></i> kuppam@gmail.com</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col" style="padding-left: 70px;">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="adminDashboard.html">Admin Dashboard</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col" style="padding-right: 50px;">
+            <h3>Kuppam Area Development Authority (KADA) office </h3>
+            <ul>
+                <li>Archive</li>
+                <li>ACtivities</li>
+            </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+            <h3>Social Media Links</h3>
+            <div class="social-icons">
+                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+        <p>
+            Disclaimer | Privacy Policy | Copyright Policy | Hyperlink Policy
+        </p>
+        <p>
+            Copyrights @ 2026 All Rights Reserved By Kuppam Area Development Authority (KADA) 
+        </p>
+    </div>
+</footer>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.target.parentElement.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

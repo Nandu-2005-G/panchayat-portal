@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Gallery</title>
+<style>
+img {
+    margin: 10px;
+    border-radius: 10px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+.img-box {
+    position: relative;
+    margin: 10px;
+}
+
+.img-box img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+}
+
+.img-box:hover .overlay {
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+<center>
+<h2 style="color: blue;font-family: Georgia, 'Times New Roman', Times, serif;border-color: azure;">Mandal grama pachayat Gallery</h2>
+</center>
+<div class="gallery">
+    <img src="p1.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p2.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p3.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p4.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p5.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p6.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p7.jpg" width="300" height="300"><div class="overlay"></div>
+    <img src="p8.jpg" width="300" height="300"><div class="overlay"></div>
+</div>
+
+
+</body>
+</html>
